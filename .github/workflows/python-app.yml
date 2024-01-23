@@ -67,6 +67,6 @@ jobs:
         path: "."
         level: medium
         confidence: medium
-        exit_zero: true
+
           
         
