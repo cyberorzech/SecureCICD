@@ -61,7 +61,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run bandit SAST
-    - uses: mdegis/bandit-action@v1
-
+      uses: mdegis/bandit-action@v1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        path: "."
+        level: high
+        confidence: high
+        exit_zero: true
           
         
