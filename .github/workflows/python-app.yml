@@ -35,9 +35,11 @@ jobs:
       run: |
         bash run_tests.bash
 
-  sca:
+  safety:
     runs-on: ubuntu-latest
     steps:
-      - name: Snyk
-      - uses: snyk/actions@0.4.0
+      - uses: safety/safety@2.3.4
+        with:
+          api-key: ${{secrets.SAFETY_API_KEY}}
+          
             
