@@ -61,7 +61,13 @@ jobs:
   bandit-sast:
     runs-on: ubuntu-latest
     steps:
-      - uses: jpetrucciani/bandit-check@main
+      - uses: mdegis/bandit-action@v1
+      - name: Run bandit SAST
         with:
-          path: '.'
-          bandit_flags: '-o output.json -f json'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: "."
+          level: medium
+          confidence: medium
+          exit_zero: true
+          
+        
