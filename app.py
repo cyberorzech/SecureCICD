@@ -7,11 +7,11 @@ app = FastAPI()
 def multiplicate(x: float, times: float, print_result: bool = False) -> float:
     if not print_result:
         return float(x) * float(times)
-    # print(eval('{}*{}'.format(x, times)))
+    print(eval('{}*{}'.format(x, times))) # nosec
 
 @app.get("/get-result")
-async def get_result():
-    pass
+async def get_result(x: float, times: float):
+    return multiplicate(x, times)
 
 def main():
     """
