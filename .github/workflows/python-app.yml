@@ -10,10 +10,9 @@ permissions:
   contents: read
 
 jobs:
+
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
@@ -99,7 +98,6 @@ jobs:
 
 
 
-
   code-pep-format:
     runs-on: ubuntu-latest
     steps:
@@ -110,5 +108,20 @@ jobs:
           options: "--check --verbose"
           src: "."
 
-          
-        
+
+  final-build:
+    runs-on: ubuntu-latest
+    needs: [safety-sca, bandit-sast, zap-dast, code-pep-format]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build docker images
+        run: docker build -t beta .
+
+
+
+
+
+
+
+
+
