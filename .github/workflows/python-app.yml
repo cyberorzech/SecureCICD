@@ -79,6 +79,7 @@ jobs:
         python -m bandit app.py
 
   zap-dast:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
