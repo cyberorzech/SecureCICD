@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Body
+from fastapi import FastAPI
 
 SECRET = "9ifewkjpmn0ij43t90j" # nosec
 
