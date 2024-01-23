@@ -67,7 +67,7 @@ jobs:
       #   path: "."
       #   level: medium
       #   confidence: medium
-      uses: shundor/bandit-action@v1
+      uses: shundor/bandit-action@v1.0
       with: 
         path: "."
         level: medium
