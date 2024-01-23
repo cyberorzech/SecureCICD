@@ -56,4 +56,12 @@ jobs:
         
     - if: steps.scan-1.outcome != 'failure'
       run: echo 'Safety failed to run, but the next step in the pipeline continued.' && exit 1
-            
+
+
+  bandit-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jpetrucciani/bandit-check@main
+        with:
+          path: '.'
+          bandit_flags: '-o output.json -f json'
