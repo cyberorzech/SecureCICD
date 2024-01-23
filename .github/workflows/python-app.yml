@@ -35,7 +35,7 @@ jobs:
       run: |
         bash run_tests.bash
 
-  safety:
+  safety-sca:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
