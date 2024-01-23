@@ -4,7 +4,7 @@ def multiplicate(x: float, times: float, print_result: bool = False) -> float:
     if not print_result:
         return float(x) * float(times)
     print(eval('{}*{}'.format(x, times)))
-    
+
 
 def main():
     """
@@ -16,3 +16,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
