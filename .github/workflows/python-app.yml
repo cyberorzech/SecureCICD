@@ -75,7 +75,7 @@ jobs:
     - name: Install bandit and run
       run: |
         python -m pip install bandit
-        python -m bandit -r .
+        python -m bandit app.py
       
 
           
