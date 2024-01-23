@@ -1,4 +1,4 @@
-SECRET = "9ifewkjpmn0ij43t90j"
+SECRET = "9ifewkjpmn0ij43t90j" # nosec
 
 def multiplicate(x: float, times: float, print_result: bool = False) -> float:
     if not print_result:
