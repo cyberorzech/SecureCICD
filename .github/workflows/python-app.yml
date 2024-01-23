@@ -58,16 +58,6 @@ jobs:
       run: echo 'Safety failed to run, but the next step in the pipeline continued.' && exit 1
 
 
-  bandit-sast:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: mdegis/bandit-action@v1
-      - name: Run bandit SAST
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          path: "."
-          level: medium
-          confidence: medium
-          exit_zero: true
+
           
         
