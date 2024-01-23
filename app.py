@@ -2,7 +2,8 @@ SECRET = "9ifewkjpmn0ij43t90j"
 
 def multiplicate(x: float, times: float, print_result: bool = False) -> float:
     if not print_result:
-        return float(x) * float(times)
+        return
+        # return float(x) * float(times)
     print(eval('{}*{}'.format(x, times)))
 
 
