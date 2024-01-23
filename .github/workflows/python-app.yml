@@ -48,9 +48,12 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - uses: pyupio/safety@2.3.4
+      id: scan-1
       continue-on-error: true
       with:
         api-key: ${{secrets.SAFETY_API_KEY}}
         scan: 'env'
-          
+        
+    - if: steps.scan-1.outcome != 'failure'
+      run: echo 'Safety failed to run, but the next step in the pipeline continued.' && exit 1
             
