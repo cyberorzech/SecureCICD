@@ -60,8 +60,8 @@ jobs:
   bandit-sast:
     runs-on: ubuntu-latest
     steps:
-    - uses: mdegis/bandit-action@v1
     - name: Run bandit SAST
+    - uses: mdegis/bandit-action@v1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         path: "."
